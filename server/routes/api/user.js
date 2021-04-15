@@ -3,8 +3,6 @@ import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import config from "../../config";
 
-import { logger } from "./config/winston";
-
 const { JWT_SECRET } = config;
 
 import User from '../../models/user';
@@ -20,7 +18,6 @@ router.get('/',async (req,res)=>{
         if(!users) throw Error('No users');
         res.status(200).json(users);
     }catch (e){
-        logger.error(e.message);
         res.status(400).json({msg:e.message });
     }
 });
