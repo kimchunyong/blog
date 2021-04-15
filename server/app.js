@@ -5,6 +5,7 @@ import config from "./config";
 import { logger } from './config/winston';
 
 import helmet from "helmet";
+import morgan from "morgan";
 import cors from "cors";
 import hpp from "hpp";
 
@@ -21,6 +22,7 @@ app.use(cors({
     origin: true,
     credentials: true,
 }));
+app.use(morgan("dev"));
 
 app.use(express.json());
 
