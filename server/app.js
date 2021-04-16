@@ -11,6 +11,7 @@ import hpp from "hpp";
 
 import postsRoutes from './routes/api/post';
 import usersRoutes from './routes/api/user';
+import authRoutes from './routes/api/auth';
 
 const app = express();
 const { MONGO_URI } = config;
@@ -32,7 +33,7 @@ mongoose
         useUnifiedTopology: true,
     })
     .then(() => logger.info('MongoDB connecting Success!!'))
-    .catch((e) => logger.error('MongoDB Error'));
+    .catch((e) => logger.error(`MongoDB ${e.message}`));
 
 app.get('/', (req, res) => {
     logger.info('GET /');
@@ -40,6 +41,7 @@ app.get('/', (req, res) => {
 });
 app.use('/api/post', postsRoutes);
 app.use('/api/user', usersRoutes);
+app.use('/api/auth', authRoutes);
 
 app.get('/error', (req, res) => {
     logger.error('Error message');
