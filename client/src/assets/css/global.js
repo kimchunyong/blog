@@ -27,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
         display: block;
     }
     body {
+        overflow-x: hidden;
         line-height: 1;
     }
     ol, ul {

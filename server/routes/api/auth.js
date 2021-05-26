@@ -24,7 +24,7 @@ router.post('/',(req,res)=>{
         if(!user) return res.status(400).json({msg:"유저가 존재하지 않습니다"});
 
         bcrypt.compare(password, user.password).then((isMatch)=>{
-            if(!isMatch) return res.공(400).json({msg:"비밀번호가 일치하지 않습니다"});
+            if(!isMatch) return res.status(400).json({msg:"비밀번호가 일치하지 않습니다"});
 
             jwt.sign({id:user.id}, JWT_SECRET, {expiresIn: "2 days"}, (err, token) =>{
                 if(err) throw err;

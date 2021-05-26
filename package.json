@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "./node_modules/.bin/nodemon server/server.js --exec babel-node"
+    "dev": "./node_modules/.bin/nodemon server/server.js --exec babel-node --ignore './client'"
   },
   "license": "MIT",
   "dependencies": {
