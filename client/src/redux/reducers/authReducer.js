@@ -62,14 +62,14 @@ const authReducer = (state = initialState, action) => {
                 errorMsg: action.payload.data.msg,
             }
         case LOGOUT_SUCCESS:
-            localStorage.removeItem("token", action.payload.token);
+            localStorage.removeItem("token");
             return {
-                token:null,
-                user:null,
-                isAuthenticated: true,
+                token: null,
+                user: null,
+                userId: null,
+                isAuthenticated: false,
                 isLoading: false,
-                userId: action.payload.user.id,
-                userRole: action.payload.user.role,
+                userRole: null,
                 errorMsg: "",
             }
         case CLEAR_ERROR_REQUEST:

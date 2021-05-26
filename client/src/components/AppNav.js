@@ -46,7 +46,7 @@ const AppNavbar = () => {
             <NavItem className="d-flex justify-content-center">
                 <Form className="col mt-2">
                     {user?.name ? (
-                        <Link>
+                        <Link to="#">
                             <Button outline color="light" className="px-3" block>
                                 <strong>{user && `Welcom${user?.name}`}</strong>
                             </Button>
@@ -60,7 +60,7 @@ const AppNavbar = () => {
             </NavItem>
             <NavItem>
                 <Form className="col">
-                    <Link onCLick={onLogout} to="#">
+                    <Link onClick={onLogout} to="#">
                         <Button outline color="light" className="mt-2" block>
                             Logout
                         </Button>
