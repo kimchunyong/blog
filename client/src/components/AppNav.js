@@ -36,9 +36,9 @@ const AppNavbar = () => {
         <>
             <NavItem>
                 {userRole === 'MainJuin' && (
-                    <Form className="col mt-2">기
+                    <Form className="col mt-2">
                         <Link to="post" className="btn btn-success block text-white px-3" onClick={addPostClick}>
-                            글쓰
+                            글쓰기
                         </Link>
                     </Form>
                 )}
